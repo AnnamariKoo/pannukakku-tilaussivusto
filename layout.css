@@ -1,0 +1,107 @@
+/* MOBILE-SÄÄNNÖT  */
+
+body {
+  font-family: "Fira Sans Condensed", sans-serif;
+  background-color: #fff8f0;
+  color: #5a4a42;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container > * {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+/* .image-container {
+  position: relative;
+  flex: 1;
+} */
+
+.image-container img {
+  width: 100%;
+  height: 70vh;
+  /* border-radius: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.form-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.price-banner {
+  position: absolute;
+  top: 25px;
+  left: 80%;
+  transform: translateX(-50%);
+  background-color: #d17b49;
+  color: white;
+  border: #fff8f0 dotted 3px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* HINTA-ANIMAATIO  */
+/* .price-banner {
+  animation-name: hintalappu;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+} */
+.price-banner-animaatio {
+  animation-name: hintalappu;
+  animation-duration: 0.25s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+@keyframes hintalappu {
+  0% {
+    background-color: #d17b49;
+    font-size: 24px;
+    border: #fff8f0 dotted 3px;
+  }
+
+  100% {
+    background-color: #c99373;
+    font-size: 30px;
+    border: #fffdf0 dotted 3px;
+  }
+}
+
+/* DESKTOP JA TABLET  */
+@media only screen and (min-width: 426px) {
+  .container > * {
+    flex-basis: 0;
+  }
+
+  .image-container {
+    position: relative;
+    flex: 1;
+  }
+
+  .image-container img {
+    height: 100vh;
+  }
+
+  .price-display {
+    display: none;
+  }
+}
